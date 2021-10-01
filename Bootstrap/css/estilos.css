@@ -1,0 +1,113 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+h1,h2,h3,h4,h5 {
+    font-weight: bold;
+}
+.altura-a-b {
+    padding: 100px 0;
+}
+
+.logotipo {
+    width: 150px;
+    padding: 10px 0;
+}
+
+.iconos-redes-header {
+    width: 20px;
+    margin: 10px 5px;
+}
+
+.banner-video {
+    background-image: url(../images/home/video-bg.jpg);
+    padding: 200px 0;
+    position: relative;
+    text-align: center;
+}
+
+.banner-video .play {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+footer {
+    background-color: #000;
+    padding: 100px 0;
+    text-align: center;
+}
+
+footer .logotipo-footer {
+    width: 200px;
+    margin-bottom: 20px;
+}
+footer p {
+    color: #fff;
+    font-size: 12px;
+}
+.carousel-caption {
+    position: absolute;
+    top: 40%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: left;
+}
+.btn-light {
+    color: #fff;
+    background-color: transparent;
+    border-color: #f8f9fa;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.sps {
+    padding: 1em .5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+.sps--abv {
+    background-color: transparent;
+    color: #000;
+}
+.sps--blw {
+    background-color: #2b2b2b;
+    color: #fff;
+}
+nav.sps--abv .logotipo {
+    width: 180px;
+}
+.cabecera-somos {
+    position: relative;
+    padding: 150px 0 100px 0;
+    background-image: url(../images/somos/slider-interior.jpg);
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+.texto-blanco {
+    color: #fff;
+}
+.banner-somos {
+    position: relative;
+    background-image: url(../images/somos/somos-equipo.jpg);
+    background-position: center center;
+    background-size: cover;
+    padding: 200px 0;
+    text-align: center;
+}
+.sombra {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+ 

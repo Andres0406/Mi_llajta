@@ -1,0 +1,15 @@
+.scale{
+    transition: all 0.2s ease-in-out;
+}
+.scale img:hover{
+    transform: scale(1.03);
+    transition: all 0.2s ease-in-out;
+}
+.alto_establecimiento{
+    height: 55vh;
+}
+@media(max-width:500px){
+    .alto_establecimiento{
+        height: 40vh;
+    }
+}

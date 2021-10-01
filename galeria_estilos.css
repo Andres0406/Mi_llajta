@@ -1,0 +1,173 @@
+.lacasa{
+    width: 100%;
+    display: flex;/*comportamiento flexible (adaptativo)*/
+    justify-content: center;/*contenido centreado*/
+    align-items: center;/*objetos centreados*/
+    height: 45vh;
+    margin: 0px;
+    padding: 0px;
+}
+.lacasa_iz,.lacasa_der{
+    width: 100%;
+    height: auto;
+}
+.lacasa figure, .lacasa_iz figure, .lacasa_dr figure{
+    position: relative;
+    height: 55vh;
+    width: 100%;
+    overflow: hidden;/*overflow:hidden (respetar todos los margenes del contenedor y evitar que contenido se salga de ellos)*/
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.6);/*sobras de sobresalido hacia el centro*/
+    margin:0;
+    padding: 0;
+}
+.lacasa figure img, .lacasa_iz figure img, .lacasa_dr figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;/*aca usamos milisegundos para un mejor control de hover*/
+}
+.lacasa figure .capa, .lacasa_iz figure .capa, .lacasa_dr figure .capa{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    transition: all 500ms ease-out;/*ahora solo usamos una velocidad cambiante solo en el final(comienza normal y termina lento)*/
+    opacity: 0;/*contenido oculto con opacidad 0*/
+    visibility: hidden;/*contenido oculto*/
+    text-align: center;
+}
+.lacasa figure:hover .capa, .lacasa_iz figure:hover .capa, .lacasa_dr figure:hover .capa{
+    opacity: 1;/*con el efecto hover al contenido le damos la opacidad normal y lo hacemos visible (solo en hover)*/
+    visibility: visible;
+}
+.lacasa figure .capa h3, .lacasa_iz figure .capa h3, .lacasa_dr figure .capa h3{
+    color: #fff;
+    font-size: 25px;
+    font-weight:600;
+    margin-bottom: 180px;/*jugamos con los margenes y con ayuda de las transiciones en milisegundos conseguiimos un efecto de movimiento*/
+    transition: all 500ms ease-out;
+}
+.lacasa figure:hover .capa h3, .lacasa_iz figure:hover .capa h3, .lacasa_dr figure:hover .capa h3{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    transition: all 500ms ease-out;
+}
+.lacasa figure .capa p, .lacasa_iz figure .capa p, .lacasa_dr figure .capa p{
+    margin: auto;
+    padding: 0px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5em; /*espacio entre lineas*/ 
+    width: 100%;
+    max-width: 220px;/*ancho maximo para una mejor visualizacion de contenido*/
+}
+.lacasa figure:hover img, .lacasa_iz figure:hover img, .lacasa_dr figure:hover img{
+    transform: scale(1.3);/*transform:scale nos ayuda a hacer zoom a lo que queramos en este caso tranformamos nuestro selector imagen con el efecto hover en un objeto escalar (zoom)*/
+}
+@media(max-width:500px){
+    .lacasa_iz figure, .lacasa_dr figure{
+        height: 230px;
+    }
+}
+/*galeria de imagenes*/
+.imgs_b{
+    width: 100%;
+    height: auto;
+}
+.contenedor_img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    box-shadow: -10px 0px 20px #000;
+    border-radius: 8px;
+}
+.contenedor_img .mascara, .contenedor_img .contenido{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+}
+.contenedor_img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    border-radius: 8px;
+}
+.contenedor_img h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.9);
+    margin: 20px 0px 0px 0px;
+    font-weight: 300;
+}
+.contenedor_img p {
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 10px;
+    text-align: center;
+}
+.contenedor_img a.link{
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background-color: #222;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 1px #000;
+}
+.contenedor_img a.link:hover{
+    box-shadow: 0px 0px 5px #000;
+}
+/*ejemplo 1*/
+.ejemplo_1{
+    transition: all 0.2s linear;
+}
+.ejemplo_1 .mascara{
+    opacity: 0;
+    background-color: rgba(0,0,0,0.7);
+    transition: all 0.7s ease-in-out;
+}
+.ejemplo_1 h2 {
+    transform: translateX(-200px);/*transformacion de objeto */
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+}
+.ejemplo_1 p {
+    transform: translateX(200px);/*transformacion de objeto*/
+    opacity: 0;
+    transition: all 0.4s linear;
+}
+.ejemplo_1 a.link {
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: translateY(100px);/*desplazamos abajo*/
+}
+.ejemplo_1:hover img {
+    transform: scale(1.1);/*agrandamiendo escalar de objeto*/
+}
+.ejemplo_1:hover .mascara {
+    opacity: 1;
+}
+.ejemplo_1:hover h2, .ejemplo_1:hover p, .ejemplo_1:hover a.link {
+    opacity: 1;
+    transform: translateX(0px);/*devolvemos valores*/
+}
+.ejemplo_1:hover p {
+    transition-delay: 0.1s;
+}
+.ejemplo_1:hover a.link {
+    transition-delay: 0.2s;/*retardo de transicion*/
+    transform: translateY(0px);
+}
